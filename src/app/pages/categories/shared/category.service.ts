@@ -42,13 +42,12 @@ export class CategoryService {
         const url = `${this.apiPath}/${category.id_categoria}`;
         return this.http.put(url, category).pipe(
             catchError(this.hadleError),
-            map(() => category)
-        )
+            map(() => category))
     }
 
     delete(id_categoria:number): Observable<any> {
         const url = `${this.apiPath}/${id_categoria}`;
-        return(this.http.delete(url).pipe(
+        return this.http.delete(url).pipe(
             catchError(this.hadleError),
             map(() => null));
     }
