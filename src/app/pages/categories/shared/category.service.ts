@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError, flatMap } from 'rxjs/operators';
 
 import { Category } from './category.model';
-import { element } from 'protractor';
+
 
 @Injectable({
     providedIn: 'root'
@@ -59,7 +59,7 @@ export class CategoryService {
     }
 
     private jsonDataToCategory(jsonData: any): Category {
-        return(jsonData as Category);
+        return jsonData as Category;
     }
 
     private hadleError(error: any): Observable<any> {
