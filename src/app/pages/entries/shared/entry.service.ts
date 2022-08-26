@@ -25,6 +25,8 @@ export class EntryService {
 
     getById(id_entry: number): Observable<Entry> {
         const url = `${this.apiPath}/${id_entry}`;
+        console.log(url, "Entrou");
+
         return this.http.get(url).pipe(
             catchError(this.hadleError),
             map(this.jsonDataToEntry)

@@ -69,7 +69,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
 
     private loadCategory() {
         if (this.currentAction == "edit") {
-
+            alert('Entrou na edição');
             this.route.paramMap.pipe(
                 switchMap(params => this.categoryService.getById(+params.get("id_categoria")))
             )

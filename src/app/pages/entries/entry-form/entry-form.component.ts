@@ -61,17 +61,23 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
     private buildEntryForm() {
         this.entryForm = this.formBuilder.group({
-            id_categoria: [null],
+            id_entry : [null],
             nome: [null, [Validators.required, Validators.minLength(2)]],
-            descricao: [null]
+            descricao: [null],
+            tipo: [null, [Validators.required]],
+            valor: [null, [Validators.required]],
+            data: [null, [Validators.required]],
+            pago: [null, [Validators.required]],
+            id_categoria: [null, [Validators.required]]
         });
     }
 
     private loadEntry() {
         if (this.currentAction == "edit") {
+            alert('Entrou na edição');
 
             this.route.paramMap.pipe(
-                switchMap(params => this.entryService.getById(+params.get("id_categoria")))
+                switchMap(params => this.entryService.getById(+params.get("id_entry")))
             )
                 .subscribe(
                     (entry) => {
@@ -86,10 +92,10 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
     private setPageTitle() {
         if (this.currentAction == 'new')
-            this.pageTitle = "Cadastro de Nova Categoria"
+            this.pageTitle = "Cadastro de Novo Lançamento"
         else {
             const entryName = this.entry.nome || ""
-            this.pageTitle = "Editando Categoria: " + entryName;
+            this.pageTitle = "Editando Lançamento: " + entryName;
         }
     }
 
@@ -120,8 +126,8 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
         toastr.success("Solicitação processada com sucesso!");
 
         // redirect/reload component page
-        this.router.navigateByUrl("categories", { skipLocationChange: true }).then(
-            () => this.router.navigate(["categories", entry.id_categoria, "edit"])
+        this.router.navigateByUrl("entries", { skipLocationChange: true }).then(
+            () => this.router.navigate(["entries", entry.id_entry, "edit"])
         )
     }
 
