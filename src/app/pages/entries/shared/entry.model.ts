@@ -9,17 +9,17 @@ export class Entry {
         public tipo?: string,
         public valor?: string,
         public data?: string,
-        public pago?: string,
+        public pago?: boolean,
         public id_categoria?: number,
         public category?: Category
     ) {}
 
     static tipos = {
         expense: 'Despesa',
-        renevue: 'Receita';
+        renevue: 'Receita'
     }
 
-    get paidText(): string {
+    get pagoText(): string {
         return this.pago ? 'Pago' : 'Pendente' ;
     }
 }
