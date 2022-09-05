@@ -18,25 +18,26 @@ export class CategoryService {
 
     getAll(): Observable<Category[]> {
         return this.http.get(this.apiPath).pipe(
-            catchError(this.hadleError),
+            catchError(this.handleError),
             map(this.jsonDataToCategories)
         )
     }
+    
+    getById(id_categoria: number): Observable<Category> {
+        const url = `${this.apiPath}/${id_categoria}`;
+        
+        console.log(url, 'error');
 
-    getById(id_category: number): Observable<Category> {
-        const url = `${this.apiPath}/${id_category}`;
-        console.log(url, "Entrou");
         return this.http.get(url).pipe(
-            
-            catchError(this.hadleError),
+            catchError(this.handleError),
             map(this.jsonDataToCategory)
         )
-    }
-
+      }
+    
     create(category: Category): Observable<Category> {
 
         return this.http.post(this.apiPath, category).pipe(
-            catchError(this.hadleError),
+            catchError(this.handleError),
             map(this.jsonDataToCategory)
         )
     }
@@ -44,14 +45,14 @@ export class CategoryService {
     update(category: Category): Observable<Category> {
         const url = `${this.apiPath}/${category.id_categoria}`;
         return this.http.put(url, category).pipe(
-            catchError(this.hadleError),
+            catchError(this.handleError),
             map(() => category))
     }
 
     delete(id_categoria:number): Observable<any> {
         const url = `${this.apiPath}/${id_categoria}`;
         return this.http.delete(url).pipe(
-            catchError(this.hadleError),
+            catchError(this.handleError),
             map(() => null));
     }
 
@@ -65,7 +66,7 @@ export class CategoryService {
         return jsonData as Category;
     }
 
-    private hadleError(error: any): Observable<any> {
+    private handleError(error: any): Observable<any> {
         console.log("Erro na requisição => ", error);
         return(throwError(error));
     }

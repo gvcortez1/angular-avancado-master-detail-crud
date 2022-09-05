@@ -69,7 +69,6 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
 
     private loadCategory() {
         if (this.currentAction == "edit") {
-            alert('Entrou na edição');
             this.route.paramMap.pipe(
                 switchMap(params => this.categoryService.getById(+params.get("id_categoria")))
             )
@@ -78,7 +77,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
                         this.category = category;
                         this.categoryForm.patchValue(category) // binds loaded category data to CategoryForm
                     },
-                    (error) => alert('Ocorreu um erro no servidor, tente mais tarde.')
+                    (error) => alert('Ocorreu um erro no servidor, tente mais tarde. ')
                 )
         }
     }
