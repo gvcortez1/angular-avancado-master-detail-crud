@@ -14,25 +14,25 @@ export class InMemoryDatabase implements InMemoryDbService {
         ];
 
         const entries: Entry[] = [
-            { id_entry: 1, nome: 'Gás de Cozinha', id_categoria: categories[0].id_categoria, category: categories[0], pago: true, data: "14/10/2018", valor: "70,80", tipo: "despesa", descricao: "Qualquer descrição para essa despesa" } as Entry,
-            { id_entry: 2, nome: 'Suplementos', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "14/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 3, nome: 'Salário na Empresa X', id_categoria: categories[3].id_categoria, category: categories[3], pago: true, data: "15/10/2018", valor: "4405,49", tipo: "receita" } as Entry,
-            { id_entry: 4, nome: 'Aluguel de Filme', id_categoria: categories[2].id_categoria, category: categories[2], pago: true, data: "16/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 5, nome: 'Suplementos', id_categoria: categories[1].id_categoria, category: categories[1], pago: true, data: "17/10/2018", valor: "30,00", tipo: "despesa" } as Entry,
-            { id_entry: 6, nome: 'Video Game da Filha', id_categoria: categories[2].id_categoria, category: categories[2], pago: false, data: "17/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 11, nome: 'Uber', id_categoria: categories[1].id_categoria, category: categories[1], pago: true, data: "17/10/2018", valor: "30,00", tipo: "despesa" } as Entry,
-            { id_entry: 12, nome: 'Aluguel', id_categoria: categories[2].id_categoria, category: categories[2], pago: false, data: "23/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 13, nome: 'Gás de Cozinha', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "25/10/2018", valor: "30,00", tipo: "despesa" } as Entry,
-            { id_entry: 14, nome: 'Pagamento Pelo Projeto XYZ', id_categoria: categories[4].id_categoria, category: categories[4], pago: true, data: "25/10/2018", valor: "2980,00", tipo: "receita" } as Entry,
-            { id_entry: 19, nome: 'Aluguel de Filme', id_categoria: categories[2].id_categoria, category: categories[2], pago: false, data: "07/11/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 21, nome: 'Video Game da Filha', id_categoria: categories[1].id_categoria, category: categories[1], pago: true, data: "17/11/2018", valor: "30,00", tipo: "despesa" } as Entry,
-            { id_entry: 22, nome: 'Cinema', id_categoria: categories[2].id_categoria, category: categories[2], pago: true, data: "18/11/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 23, nome: 'Jiu Jitsu', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "21/11/2018", valor: "130,00", tipo: "despesa" } as Entry,
-            { id_entry: 44, nome: 'Uber', id_categoria: categories[2].id_categoria, category: categories[2], pago: true, data: "28/11/2018", valor: "15,00", tipo: "despesa" } as Entry,
-            { id_entry: 55, nome: 'Cinema', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "28/11/2018", valor: "30,00", tipo: "despesa" }  as Entry
-          ]         
-      
+            { id: 1, nome: 'Gás de Cozinha', id_categoria: categories[0].id_categoria, category: categories[0], pago: true, data: "14/10/2018", valor: "70,80", tipo: "despesa", descricao: "Qualquer descrição para essa despesa" } as Entry,
+            { id: 2, nome: 'Suplementos', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "14/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 3, nome: 'Salário na Empresa X', id_categoria: categories[3].id_categoria, category: categories[3], pago: true, data: "15/10/2018", valor: "4405,49", tipo: "receita" } as Entry,
+            { id: 4, nome: 'Aluguel de Filme', id_categoria: categories[2].id_categoria, category: categories[2], pago: true, data: "16/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 5, nome: 'Suplementos', id_categoria: categories[1].id_categoria, category: categories[1], pago: true, data: "17/10/2018", valor: "30,00", tipo: "despesa" } as Entry,
+            { id: 6, nome: 'Video Game da Filha', id_categoria: categories[2].id_categoria, category: categories[2], pago: false, data: "17/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 11, nome: 'Uber', id_categoria: categories[1].id_categoria, category: categories[1], pago: true, data: "17/10/2018", valor: "30,00", tipo: "despesa" } as Entry,
+            { id: 12, nome: 'Aluguel', id_categoria: categories[2].id_categoria, category: categories[2], pago: false, data: "23/10/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 13, nome: 'Gás de Cozinha', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "25/10/2018", valor: "30,00", tipo: "despesa" } as Entry,
+            { id: 14, nome: 'Pagamento Pelo Projeto XYZ', id_categoria: categories[4].id_categoria, category: categories[4], pago: true, data: "25/10/2018", valor: "2980,00", tipo: "receita" } as Entry,
+            { id: 19, nome: 'Aluguel de Filme', id_categoria: categories[2].id_categoria, category: categories[2], pago: false, data: "07/11/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 21, nome: 'Video Game da Filha', id_categoria: categories[1].id_categoria, category: categories[1], pago: true, data: "17/11/2018", valor: "30,00", tipo: "despesa" } as Entry,
+            { id: 22, nome: 'Cinema', id_categoria: categories[2].id_categoria, category: categories[2], pago: true, data: "18/11/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 23, nome: 'Jiu Jitsu', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "21/11/2018", valor: "130,00", tipo: "despesa" } as Entry,
+            { id: 44, nome: 'Uber', id_categoria: categories[2].id_categoria, category: categories[2], pago: true, data: "28/11/2018", valor: "15,00", tipo: "despesa" } as Entry,
+            { id: 55, nome: 'Cinema', id_categoria: categories[1].id_categoria, category: categories[1], pago: false, data: "28/11/2018", valor: "30,00", tipo: "despesa" }  as Entry
+          ]
+
 return { categories, entries }
-      
+
     }
 }

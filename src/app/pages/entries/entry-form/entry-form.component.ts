@@ -46,7 +46,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
         ],
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
         today: 'Hoje',
-        clear: 'Limpar'    
+        clear: 'Limpar'
     }
 
     constructor(
@@ -100,7 +100,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
     private buildEntryForm() {
         this.entryForm = this.formBuilder.group({
-            id_entry : [null],
+            id : [null],
             nome: [null, [Validators.required, Validators.minLength(2)]],
             descricao: [null],
             tipo: ["despesa", [Validators.required]],
@@ -116,7 +116,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
             alert('Entrou na edição');
 
             this.route.paramMap.pipe(
-                switchMap(params => this.entryService.getById(+params.get("id_entry")))
+                switchMap(params => this.entryService.getById(+params.get("id")))
             )
                 .subscribe(
                     (entry) => {
@@ -145,7 +145,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
 
     private createEntry() {
-        const entry: Entry = Object.assign(new Entry(), this.entryForm.value);
+        const entry: Entry = Entry.fromJson(this.entryForm.value)
 
         this.entryService.create(entry)
             .subscribe(
@@ -156,7 +156,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
 
     private updateEntry() {
-        const entry: Entry = Object.assign(new Entry(), this.entryForm.value);
+        const entry: Entry = Entry.fromJson(this.entryForm.value)
 
         this.entryService.update(entry)
             .subscribe(
@@ -171,7 +171,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
 
         // redirect/reload component page
         this.router.navigateByUrl("entries", { skipLocationChange: true }).then(
-            () => this.router.navigate(["entries", entry.id_entry, "edit"])
+            () => this.router.navigate(["entries", entry.id, "edit"])
         )
     }
 

@@ -7,7 +7,7 @@ import { EntryListComponent } from './entry-list/entry-list.component';
 const routes: Routes = [
   { path: '', component : EntryListComponent }
   , { path: 'new', component : EntryFormComponent }
-  , { path: ':id_entry/edit', component : EntryFormComponent }
+  , { path: ':id/edit', component : EntryFormComponent }
 
 ];
 
